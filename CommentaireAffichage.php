@@ -1,9 +1,10 @@
+
 <?php
 if (isset($_POST["texteCommentaire"]))
 {
 	if (InsertionCommentaire($_POST["texteCommentaire"]) === false)
 	{
-		echo "Problème avec la base de données";
+		echo "ProblÃ¨me avec la base de donnÃ©es";
 	}
 	//InsererResultat(strip_tags($_POST["texteCommentaire"]));
 
@@ -12,6 +13,7 @@ $lesCommentaires = LireCommentaires();
 
 if ($lesCommentaires)
 {
+	//boucle sur les commentaires
 	foreach ($lesCommentaires as $unCommentaire)
 	{
 		echo "<div>" . htmlspecialchars($unCommentaire["textecommentaire"]) . "</div>";
