@@ -8,7 +8,7 @@ include_once 'initDB.php';
  */
 
 /***
- * LireCommentaire retourne tous les commentaires dans un tableau associatif.
+ * LireCommentaire retourne tous les commentaires dans un tableau associatif. 
  */
 function LireCommentaires()
 {
