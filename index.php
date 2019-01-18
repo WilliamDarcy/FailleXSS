@@ -1,6 +1,17 @@
 <?php
 
-include "DataAccess/CommentaireDB.php" ?>
+
+include 'CommentaireAffichage.php';
+if (isset($_POST["texteCommentaire"]))
+{
+	if (InsertionCommentaire($_POST["texteCommentaire"]) === false)
+	{
+		echo "Problème avec la base de données";
+	}
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +27,28 @@ include "DataAccess/CommentaireDB.php" ?>
 
 	</form>
 	<h1>Les commentaires</h1>
+	<?php
+	$lesCommentaires = LireCommentaires();
+
+if ($lesCommentaires)
+{
+	foreach ($lesCommentaires as $unCommentaire)
+	{
+		?>
+		<div>
+		<span><?php echo $unCommentaire["texteCommentaire"] ?>
+		</<span>
+		<span>
+		<?php echo date('d-m-Y H:i:s', strtotime($unCommentaire["dateComment"])) ?>
+	</span>
+		</div>
+		<hr>
+	<?php 
+	}
+}
+?>
 </body>
+
 <?php 
 
-include 'CommentaireAffichage.php';
+
