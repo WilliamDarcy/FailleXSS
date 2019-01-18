@@ -1,6 +1,6 @@
 # FailleXSS
 
-#Test d'insertion dans une base 
+# Test d'insertion dans une base 
 Le but est de provoquer une faille XSS.
 
 Il faut importer le fichier SQL (commentaire.sql).
